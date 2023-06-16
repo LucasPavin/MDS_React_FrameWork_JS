@@ -1,0 +1,47 @@
+.header {
+    background-color: rgb(180, 180, 180);
+    padding: 10px;
+    &_section {
+        max-width: 1440px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        &_logo {
+            width: fit-content;
+            img {
+                height: 50px;
+                width: auto;
+            }
+        }
+        &_navigation {
+            flex-grow: 1;
+        
+            &_nav-links {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: flex-end;
+        
+                li {
+                margin-left: 10px;
+        
+                a {
+                    color: #333;
+                    text-decoration: none;
+                    font-weight: bold;
+        
+                    &:hover {
+                    color: #000;
+                    text-decoration: underline;
+                    }
+                }
+                }
+            }
+        }
+    }
+  
+  }
+  

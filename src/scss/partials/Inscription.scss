@@ -1,0 +1,71 @@
+.inscription {
+    min-height: 100vh;
+    background-color: white;
+    &_content {
+        max-width: 1440px;
+        padding: 1rem;  
+        margin: auto;
+        height: 100%;
+        &__title {
+            color: #141414;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 3rem;
+        }
+        &__form {
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                max-width: 400px;
+                margin: auto;
+                input {
+                    padding: .5rem 1rem;
+                    border-radius: 20px;
+                }
+                .success {
+                    color: green;
+                }
+            }
+        }
+    }
+}
+
+
+.button-background-move {
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    &::after {
+        content: "";
+        background-color: #ffe54c;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+      }
+      &:hover:after {
+        top: 0px;
+        left: 0px;
+      }
+  }
+  
+  
+  @media (min-width: 768px) {
+    .button-background-move {
+      padding: 13px 50px 13px;
+    }
+  }
+  
