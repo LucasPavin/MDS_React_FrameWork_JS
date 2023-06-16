@@ -1,3 +1,22 @@
+# Installation des extensions
+
+````
+npm install react-router-dom@latest
+```
+```
+npm install node-sass
+node-sass styles.scss styles.css
+```
+```
+npm i jsonwebtoken
+```
+````
+npm i axios
+`
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
