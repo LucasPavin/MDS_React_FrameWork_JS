@@ -1,6 +1,8 @@
 .header {
-    background-color: rgb(180, 180, 180);
+    background-color: white;
     padding: 10px;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+    
     &_section {
         max-width: 1440px;
         margin: auto;
@@ -42,6 +44,7 @@
             }
         }
     }
+    
   
   }
   

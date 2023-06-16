@@ -1,5 +1,8 @@
 @use 'scss/homepage.scss';
 @use 'scss/layout/var.scss';
+@use 'scss/pages/connexion.scss';
+
+@import "./scss/pages/connexion.scss";
 
 .App {
   text-align: center;

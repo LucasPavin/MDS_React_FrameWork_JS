@@ -6,6 +6,8 @@ import Header from './partials/Header'
 import AllCategory from './pages/AllCategory.js';
 import './scss/layout/var.scss'
 import CreateCategory from './pages/CreateCategory.js';
+import HomePage from './pages/HomePage.js';
+
 
 const App = () => {
   return (
@@ -13,6 +15,7 @@ const App = () => {
       <Header />
 
       <Routes>
+        <Route exact path="/" element={<HomePage />} />
         <Route exact path="/connexion" element={<Connexion />} />
         <Route exact path="/inscription" element={<Inscription />} />
         <Route exact path="/categories" element={<AllCategory />} />

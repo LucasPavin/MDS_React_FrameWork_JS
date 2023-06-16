@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../scss/pages/connexion.scss';
+import '../scss/layout/button.scss';
 
 
 const Connexion = () => {
@@ -40,12 +42,24 @@ const Connexion = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-      <input type="password" name="password" placeholder="Mot de passe" value={formData.password} onChange={handleChange} />
-      {error && <p className="error">{error}</p>} 
-      <button type="submit">Se connecter</button>
-    </form>
+    <section className='connexion'>
+      <div className='connexion__content'>
+        <div className='connexion__content__title'>
+          <h1>Connexion</h1>
+        </div>
+        <div className='connexion__content__form'>
+          <form onSubmit={handleSubmit}>
+            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+            <input type="password" name="password" placeholder="Mot de passe" value={formData.password} onChange={handleChange} />
+            {error && <p className="error">{error}</p>} 
+            <div className='connexion__content__form_btn'>
+              <button type="submit" className='btn primary'>Se connecter</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </section>
   );
 };
 

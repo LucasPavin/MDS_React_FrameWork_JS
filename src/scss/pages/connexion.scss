@@ -1,0 +1,33 @@
+.connexion {
+    min-height: 100vh;
+    &__content {
+        max-width: 1400px;
+        margin: auto;
+        padding: 1rem;
+        &__title {
+            color: #3493d6;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 3rem;
+        }
+        &__form {
+            padding: 2rem 1rem;
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                max-width: 480px;
+                margin: auto;
+                input {
+                    padding: .5rem 0;
+                    border: none;
+                    border-bottom: 2px solid #3493d6;
+                }
+            }
+            &_btn {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}

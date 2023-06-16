@@ -1,0 +1,149 @@
+.home {
+    position: relative;
+    &_intro {
+        max-width: 1400px;
+        margin: auto;
+        padding: 1rem;
+        position: relative;
+        z-index: 1;
+        &__content {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            &_left {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                &_title {
+                    font-size: 3rem;
+                    margin-top: 0;
+                    color: #3493d6;
+                    h1 {
+                        margin-bottom: 25px;
+                    }
+                }
+                &_desc{
+                    max-width: 570px;
+                    font-size: 1.5em;
+                    font-weight: 700;
+                }
+                &_picto {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    max-width: 570px;
+                }
+            }
+            &_right {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                &_img {
+                    img {
+                        max-width: 480px;
+                        height: 100%;
+                    }
+                }
+                &_bottom {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 480px;
+                    margin-top: 50px;
+                    gap: 1rem;
+                    .rating {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        max-width: 210px;
+                        margin: auto;
+                        p {
+                            width: 140px;
+                            text-align: center;
+                            font-weight: 700;
+                        }
+                    }
+                    .editor-choice {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        max-width: 210px;
+                        margin: auto;
+                        p {
+                            width: 140px;
+                            text-align: center;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url('../../img/background.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 680px;
+        height: 600px;
+        top: 0;
+        right: 0;
+        z-index: 0;
+    }
+}
+.keyvalue {
+    &_content {
+        max-width: 1400px;
+        margin: 100px auto;
+        display: flex;
+        flex-direction: row;
+        &__left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &_group{
+                position: relative;
+                margin-left: 50px;
+                .title {
+                    color: #3493d6;
+                    font-size: 1.8em;
+                }
+                .text {
+                    font-size: 1.1em;
+                    margin-top: 0.5em;
+                    max-width: 500px;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-image: url(./../../img/arrow.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 50px;
+                    height: 50px;
+                    left: -75guit px;
+                    top: 35px;
+                    filter: invert(56%) sepia(45%) saturate(3644%) hue-rotate(179deg) brightness(93%) contrast(79%);
+                }
+            }
+        }
+        &__right {
+            width: 50%;
+            display: inline-block;
+            text-align: center;
+            img {
+                box-shadow: 0 0.2em 1.2em rgba(0,0,0,0.2);
+                padding: 1em 1em 4em;
+            }
+        }
+    }
+}
