@@ -1,6 +1,6 @@
 # Installation des extensions
 
-````
+```
 npm install react-router-dom@latest
 ```
 ```
@@ -10,9 +10,9 @@ node-sass styles.scss styles.css
 ```
 npm i jsonwebtoken
 ```
-````
+```
 npm i axios
-`
+```
 
 
 
