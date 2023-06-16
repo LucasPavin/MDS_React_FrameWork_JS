@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import Modal from 'react-modal';
+import '../scss/pages/all_category.scss'
+import Friend from '../img/friends-key-values.jpg'
 
 Modal.setAppElement('#root');
 
@@ -41,6 +43,7 @@ const AllCategory = () => {
 
     fetchCategories();
   }, [navigate]);
+
   // Récupération des dépenses au click sur une catégorie
   // On vient rechercher l'id de la catégorie sur laquelle on a cliqué
   const handleCategoryClick = async (categoryId) => {
@@ -152,65 +155,81 @@ const AllCategory = () => {
       console.error(error);
     }
   };
-  // Variable permettant 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
 
+
+  // Variable permettant de fermer la modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
   return (
-    <div>
-      <h1>Liste des catégories</h1>
-      <div>
-        <Link to="/categories/creation">
-          <button>Créer une catégorie</button>
-        </Link>
-      </div>
 
-      <ul>
-        {categories.map((category) => (
-          <li key={category._id} onClick={() => handleCategoryClick(category._id)}>
-            {category.name}
-          </li>
-        ))}
-      </ul>
+    <section className='category'>
+      <div className='category_container'>
+        <div className='category_container__title'>
+          <h1>Les catégories</h1>
+        </div>
+        <div className='category_container__content'>
+            <div className='category_container__content_create'>
+              <Link to="/categories/creation">
+                <button className='btn primary'>Créer une catégorie</button>
+              </Link>
+            </div>
+            <div className='category_container__content_list'>
 
-      <div>
-        <button onClick={openModal}>Voir les dépenses</button>
-        <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
-          <h2>Dépenses de la catégorie sélectionnée</h2>
-          <ul>
-            {selectedCategoryExpenses.map((expense) => (
-              <li key={expense._id}>
-                <input
-                  type="text"
-                  value={expense.name}
-                  onChange={(e) => handleUpdateExpense(expense._id, e.target.value, expense.amount)}
-                />
-                <input
-                  type="number"
-                  value={expense.amount}
-                  onChange={(e) => handleUpdateExpense(expense._id, expense.name, e.target.value)}
-                />
-                <button onClick={() => handleDeleteExpense(expense._id)}>Supprimer</button>
-              </li>
-            ))}
-          </ul>
-          <div>
-            <h3>Créer une nouvelle dépense</h3>
-            <label>Nom:</label>
-            <input type="text" value={newExpenseName} onChange={(e) => setNewExpenseName(e.target.value)} />
-            <label>Montant:</label>
-            <input type="number" value={newExpenseAmount} onChange={(e) => setNewExpenseAmount(e.target.value)} />
-            <button onClick={handleCreateExpense}>Créer</button>
-          </div>
-          <button onClick={closeModal}>Fermer</button>
-        </Modal>
+              <div className='all-card'>
+                {categories.map((category) => (
+                  <div className='one-card' key={category._id} onClick={() => handleCategoryClick(category._id)}>
+                    <img src={Friend} alt=""/>
+                    <p>{category.name}</p>
+                    <div className="card-actions">
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+        <div>
+          <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
+            <h2>Dépenses de la catégorie sélectionnée</h2>
+            <ul>
+              {selectedCategoryExpenses.map((expense) => (
+                <li key={expense._id}>
+                  <input
+                    type="text"
+                    value={expense.name}
+                    onChange={(e) => handleUpdateExpense(expense._id, e.target.value, expense.amount)}
+                  />
+                  <input
+                    type="number"
+                    value={expense.amount}
+                    onChange={(e) => handleUpdateExpense(expense._id, expense.name, e.target.value)}
+                  />
+                  <button onClick={() => handleDeleteExpense(expense._id)}>Supprimer</button>
+                </li>
+              ))}
+            </ul>
+            <div>
+              <h3>Créer une nouvelle dépense</h3>
+              <label>Nom:</label>
+              <input type="text" value={newExpenseName} onChange={(e) => setNewExpenseName(e.target.value)} />
+              <label>Montant:</label>
+              <input type="number" value={newExpenseAmount} onChange={(e) => setNewExpenseAmount(e.target.value)} />
+              <button onClick={handleCreateExpense}>Créer</button>
+            </div>
+            <button onClick={closeModal}>Fermer</button>
+          </Modal>
+        </div>
+            </div>
+        
+        </div>
+        
       </div>
-    </div>
+      <div>
+        <div>
+        </div>
+
+      </div>
+    </section>
   );
 };
 
