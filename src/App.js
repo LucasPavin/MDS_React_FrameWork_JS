@@ -13,7 +13,6 @@ const App = () => {
       <Header />
 
       <Routes>
-        {/* <Route exact path="/" component={} /> */}
         <Route exact path="/connexion" element={<Connexion />} />
         <Route exact path="/inscription" element={<Inscription />} />
         <Route exact path="/categories" element={<AllCategory />} />

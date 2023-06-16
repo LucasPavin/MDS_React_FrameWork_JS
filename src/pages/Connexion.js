@@ -23,7 +23,7 @@ const Connexion = () => {
       .then((response) => {
         const { token } = response.data;
   
-        // Stocker le token dans le localStorage
+        // Stocker le token 
         localStorage.setItem('token', token);
   
         // Rediriger vers la page des catégories
@@ -43,7 +43,7 @@ const Connexion = () => {
     <form onSubmit={handleSubmit}>
       <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
       <input type="password" name="password" placeholder="Mot de passe" value={formData.password} onChange={handleChange} />
-      {error && <p className="error">{error}</p>} {/* Afficher le message d'erreur */}
+      {error && <p className="error">{error}</p>} 
       <button type="submit">Se connecter</button>
     </form>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../img/logo.png';
-import '../scss/partials/Header.scss'; // Importez le fichier SCSS pour le style du Header
+import '../scss/partials/Header.scss';
 
 const Header = () => {
   return (

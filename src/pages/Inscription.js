@@ -21,8 +21,10 @@ const Inscription = () => {
     axios.post('http://localhost:8080/inscription', formData)
     .then((response) => {
       console.log(response.data);
-      setSuccessMessage('Inscription réussie !'); // Définir le message de réussite
-      setErrors({}); // Réinitialiser les erreurs
+      // Message de réussite
+      setSuccessMessage('Inscription réussie !'); 
+      // Réinitialiser les erreurs
+      setErrors({}); 
     })
     .catch((error) => {
       if (error.response && error.response.data && error.response.data.errors) {
